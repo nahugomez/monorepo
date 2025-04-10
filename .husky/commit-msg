@@ -1,0 +1,55 @@
+# Definir colores para los mensajes
+ROJO='\033[0;31m'
+VERDE='\033[0;32m'
+AZUL='\033[0;34m'
+SIN_COLOR='\033[0m'
+
+# Obtener el mensaje de commit (el primer argumento es la ruta al archivo temporal que contiene el mensaje)
+commit_msg_file=$1
+commit_msg=$(cat "$commit_msg_file")
+
+# Omitir commits de fusión (merge)
+if echo "$commit_msg" | grep -q "^Merge branch"; then
+  exit 0
+fi
+
+# Validar el formato del mensaje de commit
+# 1. Primera letra en mayúscula
+# 2. Primera palabra es un verbo imperativo
+# 3. Sin punto al final
+
+# Extraer la primera palabra
+first_word=$(echo "$commit_msg" | awk '{print $1}')
+
+# Verificar si la primera letra es mayúscula
+if ! echo "$first_word" | grep -q "^[A-Z]"; then
+  echo -e "${ROJO}[ERROR] El mensaje de commit debe comenzar con una letra mayúscula${SIN_COLOR}"
+  exit 1
+fi
+
+# Lista de verbos imperativos comunes en español
+imperative_verbs="Agrega Actualiza Añade Arregla Cambia Configura Corrige Crea Elimina Implementa Mejora Modifica Mueve Optimiza Refactoriza Remueve Renombra Soluciona"
+
+# Verificar si la primera palabra es un verbo imperativo
+verb_found=false
+for verb in $imperative_verbs; do
+  if [ "$first_word" = "$verb" ]; then
+    verb_found=true
+    break
+  fi
+done
+
+if [ "$verb_found" = false ]; then
+  echo -e "${ROJO}[ERROR] El mensaje de commit debe comenzar con un verbo imperativo (ej: Agrega, Modifica, Elimina, etc.)${SIN_COLOR}"
+  echo -e "${AZUL}[INFO] Verbos permitidos: $imperative_verbs${SIN_COLOR}"
+  exit 1
+fi
+
+# Verificar si el mensaje termina con un punto
+if echo "$commit_msg" | grep -q "\.$"; then
+  echo -e "${ROJO}[ERROR] El mensaje de commit no debe terminar con un punto${SIN_COLOR}"
+  exit 1
+fi
+
+echo -e "${VERDE}[OK] El formato del mensaje de commit es válido${SIN_COLOR}"
+exit 0

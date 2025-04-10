@@ -19,14 +19,22 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "check-types": "turbo run check-types",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "UNLICENSED",
   "packageManager": "pnpm@10.0.0",
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "turbo": "^2.5.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write"
+    ]
   }
 }

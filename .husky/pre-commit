@@ -1,0 +1,5 @@
+# Ejecutamos lint-staged (formatea el codigo, solo en los archivos que estan stagged)
+pnpm lint-staged
+
+# Ejecutamos lint (usando Turborepo)
+pnpm lint
