@@ -23,7 +23,7 @@ first_word=$(echo "$commit_msg" | awk '{print $1}')
 
 # Verificar si la primera letra es mayúscula
 if ! echo "$first_word" | grep -q "^[A-Z]"; then
-  echo -e "${ROJO}[ERROR] El mensaje de commit debe comenzar con una letra mayúscula${SIN_COLOR}"
+  echo "${ROJO}[ERROR] El mensaje de commit debe comenzar con una letra mayúscula${SIN_COLOR}"
   exit 1
 fi
 
@@ -40,16 +40,16 @@ for verb in $imperative_verbs; do
 done
 
 if [ "$verb_found" = false ]; then
-  echo -e "${ROJO}[ERROR] El mensaje de commit debe comenzar con un verbo imperativo (ej: Agrega, Modifica, Elimina, etc.)${SIN_COLOR}"
-  echo -e "${AZUL}[INFO] Verbos permitidos: $imperative_verbs${SIN_COLOR}"
+  echo "${ROJO}[ERROR] El mensaje de commit debe comenzar con un verbo imperativo (ej: Agrega, Modifica, Elimina, etc.)${SIN_COLOR}"
+  echo "${AZUL}[INFO] Verbos permitidos: $imperative_verbs${SIN_COLOR}"
   exit 1
 fi
 
 # Verificar si el mensaje termina con un punto
 if echo "$commit_msg" | grep -q "\.$"; then
-  echo -e "${ROJO}[ERROR] El mensaje de commit no debe terminar con un punto${SIN_COLOR}"
+  echo "${ROJO}[ERROR] El mensaje de commit no debe terminar con un punto${SIN_COLOR}"
   exit 1
 fi
 
-echo -e "${VERDE}[OK] El formato del mensaje de commit es válido${SIN_COLOR}"
+echo "${VERDE}[OK] El formato del mensaje de commit es válido${SIN_COLOR}"
 exit 0
