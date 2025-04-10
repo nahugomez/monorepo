@@ -23,13 +23,13 @@
     "check-types": "turbo run check-types",
     "prepare": "husky"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Nahuel Gomez",
   "license": "UNLICENSED",
   "packageManager": "pnpm@10.0.0",
   "devDependencies": {
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
     "turbo": "^2.5.0"
   },
   "lint-staged": {

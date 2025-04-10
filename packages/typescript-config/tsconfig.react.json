@@ -1,0 +1,15 @@
+{
+  // Especifica la versión del esquema JSON que se utiliza para validar este archivo
+  "$schema": "https://json.schemastore.org/tsconfig",
+
+  // Extiende la configuración base de otro archivo
+  // Esto significa que heredará todas las opciones de tsconfig.base.json
+  "extends": "./tsconfig.base.json",
+
+  "compilerOptions": {
+    // Configura cómo se procesa el código JSX
+    // "react-jsx" transforma automáticamente JSX sin necesidad de importar React
+    // Equivale a usar la transformación automática de React 17+ (no requiere "import React from 'react'")
+    "jsx": "react-jsx"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@monorepo/typescript-config",
+  "version": "1.0.0",
+  "description": "Typescript base configuration to use in monorepo",
+  "private": true,
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "exports": {
+    ".": "./tsconfig.base.json",
+    "./tsconfig.next.json": "./tsconfig.next.json",
+    "./tsconfig.react.json": "./tsconfig.react.json"
+  }
+}

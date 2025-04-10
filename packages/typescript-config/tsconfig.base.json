@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // Genera archivos .d.ts con declaraciones de tipos
+    "declaration": true,
+    // Genera archivos .d.ts.map para permitir depuración con los archivos de declaración
+    "declarationMap": true,
+    // Permite la interoperabilidad entre módulos CommonJS y ES para importaciones por defecto
+    "esModuleInterop": true,
+    // Desactiva la compilación incremental (no crea el archivo .tsbuildinfo)
+    "incremental": false,
+    // Garantiza que cada archivo se trate como un módulo separado
+    "isolatedModules": true,
+    // Define las bibliotecas de JavaScript disponibles: ES2022, DOM y API DOM Iterable
+    "lib": ["es2022", "DOM", "DOM.Iterable"],
+    // Establece el sistema de módulos a usar (NodeNext = Node.js con soporte ESM)
+    "module": "NodeNext",
+    // Fuerza la detección de módulos incluso si no hay sentencias import/export
+    "moduleDetection": "force",
+    // Define cómo se resuelven los módulos (compatible con Node.js)
+    "moduleResolution": "NodeNext",
+    // Agrega null/undefined checks cuando se accede a propiedades mediante índices
+    "noUncheckedIndexedAccess": true,
+    // Permite importar archivos JSON como módulos
+    "resolveJsonModule": true,
+    // Omite la verificación de tipos en archivos de las node_modules
+    "skipLibCheck": true,
+    // Habilita todas las comprobaciones de tipo estrictas de TypeScript
+    "strict": true,
+    // Define la versión de JavaScript a la que se compilará el código
+    "target": "ES2022"
+  }
+}
