@@ -5,6 +5,7 @@
   "license": "UNLICENSED",
   "description": "Other app",
   "author": "Nahuel Gomez",
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
