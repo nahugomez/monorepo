@@ -7,6 +7,10 @@
   "private": true,
   "packageManager": "pnpm@10.0.0",
   "type": "module",
+  "exports": {
+    "./theme.css": "./dist/theme.css",
+    "./styles.css": "./dist/styles.css"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -14,6 +18,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@monorepo/design": "workspace:*",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^4.0.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "next": "15.3.0"
