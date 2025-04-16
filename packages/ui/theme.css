@@ -1,0 +1,20 @@
+@theme {
+  /* Tipografías */
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-serif: Merriweather, Georgia, serif;
+  --font-mono: Fira Code, monospace;
+
+  /* Paleta de colores personalizada */
+  --color-primary-100: #fedcb6;
+  --color-primary-200: #fec788;
+  --color-primary-300: #feb14d;
+  --color-primary-400: #f77f00;
+  --color-primary-500: #c57e05;
+  --color-primary-600: #965f04;
+  --color-primary-700: #694104;
+  --color-primary-800: #3e2502;
+  --color-primary-900: #100600;
+
+  /* Espaciado base */
+  --spacing: 0.25rem;
+}

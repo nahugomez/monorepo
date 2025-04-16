@@ -1,2 +1,2 @@
 @import 'tailwindcss';
-@import '@monorepo/design/theme';
+@import '@monorepo/ui/styles.css';

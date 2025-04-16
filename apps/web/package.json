@@ -1,15 +1,16 @@
 {
   "name": "@monorepo/web",
   "version": "0.1.0",
+  "private": true,
   "description": "Next.js Web Application",
   "author": "Nahuel Gomez",
   "license": "UNLICENSED",
-  "private": true,
   "packageManager": "pnpm@10.0.0",
   "type": "module",
   "exports": {
-    "./theme.css": "./dist/theme.css",
-    "./styles.css": "./dist/styles.css"
+    "./theme.css": "./theme.css",
+    "./components": "./components/index.ts",
+    ".": "./"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -18,19 +19,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@monorepo/design": "workspace:*",
-    "postcss": "^8.5.2",
-    "tailwindcss": "^4.0.6",
+    "@monorepo/ui": "workspace: *",
+    "next": "15.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@monorepo/eslint-config": "workspace:*",
+    "@monorepo/typescript-config": "workspace:*",
+    "@tailwindcss/cli": "^4.1.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@monorepo/typescript-config": "workspace:*",
-    "@monorepo/eslint-config": "workspace:*"
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5"
   }
 }
