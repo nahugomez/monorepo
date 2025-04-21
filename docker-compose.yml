@@ -1,0 +1,24 @@
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile
+    restart: always
+    ports:
+      - 3000:80
+    networks:
+      - app_network
+  other:
+    container_name: other
+    build:
+      context: .
+      dockerfile: ./apps/other/Dockerfile
+    restart: always
+    ports:
+      - 3001:80
+    networks:
+      - app_network
+
+networks:
+  app_network:
