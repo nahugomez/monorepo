@@ -25,8 +25,8 @@ export default async function PostPage({ params }: { params: { id: string } }) {
           prose prose-slate dark:prose-invert lg:prose-xl
         "
       >
-        <header className="mb-8 p-6">
-          <h1 className="text-4xl font-extrabold tracking-tight mb-2">
+        <header className="mb-2 p-6">
+          <h1 className="text-4xl font-extrabold tracking-tight mb-2 dark:text-white">
             {post.title}
           </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400">
