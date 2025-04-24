@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import { Post } from '../../types';
 
 async function getPost(id: string): Promise<Post | null> {
