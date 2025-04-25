@@ -21,6 +21,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
     "check-types": "turbo run check-types",
+    "clean": "pnpm -r exec rm -rf node_modules && rm -rf node_modules .turbo",
     "prepare": "husky"
   },
   "author": "Nahuel Gomez",
